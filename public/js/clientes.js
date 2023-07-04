@@ -4,7 +4,7 @@ $(document).ready(function() {
     feather.replace();
 
     var metodo = '',titulo = '';
-    let urlApi = window.location.protocol +"//"+ window.location.hostname + "/api-loja/admin";
+    let urlApi =  fncUrl();
 
     var table  = $('#tableClientes').DataTable({
         "ajax":{

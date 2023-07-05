@@ -2,6 +2,7 @@
 
 return [
 
+    
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -52,9 +53,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://127.0.0.1'),
+    'url' => env('APP_URL', $_SERVER['REQUEST_SCHEME']. '://'.$_SERVER['HTTP_HOST']),
 
-    'asset_url' => env('ASSET_URL', 'http://127.0.0.1/api-loja/public'),
+    'asset_url' => env('ASSET_URL', $_SERVER['REQUEST_SCHEME'] == 'http' ? $_SERVER['REQUEST_SCHEME']. '://'.$_SERVER['HTTP_HOST'].'/api-loja/public' : $_SERVER['REQUEST_SCHEME']. '://'.$_SERVER['HTTP_HOST'].'/public'),
 
     /*
     |--------------------------------------------------------------------------
